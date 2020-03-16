@@ -8,6 +8,9 @@ node {
             stage('plan') {
                 sh 'terraform plan'
             }
+            stage('apply') {
+                sh 'terraform apply'
+            }
         }
     }
 }
