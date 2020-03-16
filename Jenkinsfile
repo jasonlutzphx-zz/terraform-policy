@@ -1,6 +1,6 @@
 node {
     checkout scm
-    docker.image('hashicorp/terraform:0.12.20').inside('--rm --entrypoint=""') {
+    docker.image('hashicorp/terraform:0.12.23').inside('--rm --entrypoint=""') {
         withEnv(['TF_IN_AUTOMATION=true', 'TF_INPUT=false']) {
             stage('initialize') {
                 sh 'terraform init'
