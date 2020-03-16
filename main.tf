@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "toy-resource-jasonlutzphx2"
+  bucket = "toy-resource-jasonlutzphx3"
   acl    = "private"
 
   tags = {
