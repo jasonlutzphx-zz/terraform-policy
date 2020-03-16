@@ -9,7 +9,7 @@ node {
                 sh 'terraform plan'
             }
             stage('apply') {
-                sh 'terraform apply'
+                sh 'terraform apply -auto-approve'
             }
         }
     }
