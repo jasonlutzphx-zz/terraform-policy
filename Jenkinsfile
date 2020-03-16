@@ -9,7 +9,9 @@ node {
                 sh 'terraform plan'
             }
             stage('apply') {
-                sh 'terraform apply -auto-approve'
+                if (env.BRANCH_NAME == 'master') {
+                    sh 'terraform apply -auto-approve'
+                }
             }
         }
     }
