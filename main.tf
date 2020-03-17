@@ -13,13 +13,11 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_s3_bucket" "b" {
-  bucket = "toy-resource-jasonlutzphx3"
-  acl    = "private"
+data "aws_organizations_organization" "this" {}
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+module "example_policy" {
+  source    = "./modules/example_scp"
+  target_id = data.aws_organizations_organization.this.id
 }
+
 

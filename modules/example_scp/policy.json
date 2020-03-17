@@ -1,0 +1,83 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "configStatement",
+            "Effect": "Deny",
+            "Action": [
+                "config:DeleteConfigRule",
+                "config:DeleteConfigurationAggregator",
+                "config:DeleteConfigurationRecorder",
+                "config:DeleteDeliveryChannel",
+                "config:DeleteEvaluationResults",
+                "config:DeletePendingAggregationRequest"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "cloudtTrailStatement",
+            "Effect": "Deny",
+            "Action": [
+                "cloudtrail:StopLogging"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "guardDutyStatement",
+            "Effect": "Deny",
+            "Action": [
+                "guardduty:DeleteDetector",
+                "guardduty:DeleteInvitations",
+                "guardduty:DeleteIPSet",
+                "guardduty:DeleteMembers",
+                "guardduty:GetThreatIntelSet"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "organizationsStatement",
+            "Effect": "Deny",
+            "Action": [
+                "organizations:CreateAccount",
+                "organizations:CreateOrganization",
+                "organizations:CreateOrganizationalUnit",
+                "organizations:DeleteOrganization",
+                "organizations:DeleteOrganizationalUnit",
+                "organizations:DeletePolicy",
+                "organizations:LeaveOrganization",
+                "organizations:MoveAccount",
+                "organizations:RemoveAccountFromOrganization"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "flowLogsStatement",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:DeleteFlowLogs"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "cloudWatchStatement",
+            "Effect": "Deny",
+            "Action": [
+                "logs:DeleteLogGroup",
+                "logs:DeleteLogStream"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
