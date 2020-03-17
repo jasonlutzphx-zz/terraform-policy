@@ -7,7 +7,7 @@ terraform {
 
 
 resource "aws_organizations_policy" "example" {
-  name    = "example"
+  name    = "example2"
   content = file("${path.module}/policy.json")
 }
 resource "aws_organizations_policy_attachment" "example" {
