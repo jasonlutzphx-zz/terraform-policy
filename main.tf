@@ -17,7 +17,7 @@ data "aws_organizations_organization" "this" {}
 
 module "example_policy" {
   source    = "./modules/example_scp"
-  target_id = data.aws_organizations_organization.this.id
+  target_id = data.aws_organizations_organization.this.roots.0.id
 }
 
 

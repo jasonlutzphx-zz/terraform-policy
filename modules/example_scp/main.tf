@@ -14,3 +14,6 @@ resource "aws_organizations_policy_attachment" "example" {
   policy_id = aws_organizations_policy.example.id
   target_id = var.target_id
 }
+output "target_id" {
+  value = var.target_id
+}
