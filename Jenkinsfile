@@ -1,3 +1,5 @@
+import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
+
 node {
     checkout scm
     docker.image('hashicorp/terraform:0.12.23').inside('--entrypoint=""') {
@@ -9,7 +11,11 @@ node {
                 sh 'terraform plan'
             }
             stage('apply') {
-                sh 'terraform apply -auto-approve'
+                if (env.BRANCH_NAME == 'master') {
+                    sh 'terraform apply -auto-approve'
+                } else {
+                    Utils.markStageSkippedForConditional('apply')
+                }
             }
         }
     }
