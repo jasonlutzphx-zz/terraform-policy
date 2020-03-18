@@ -11,20 +11,7 @@
                 "*"
             ]
         },
-        {
-            "Sid": "guardDutyStatement",
-            "Effect": "Deny",
-            "Action": [
-                "guardduty:DeleteDetector",
-                "guardduty:DeleteInvitations",
-                "guardduty:DeleteIPSet",
-                "guardduty:DeleteMembers",
-                "guardduty:GetThreatIntelSet"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
+
         {
             "Sid": "organizationsStatement",
             "Effect": "Deny",
