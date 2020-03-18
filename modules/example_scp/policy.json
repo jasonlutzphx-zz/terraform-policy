@@ -2,21 +2,6 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "configStatement",
-            "Effect": "Deny",
-            "Action": [
-                "config:DeleteConfigRule",
-                "config:DeleteConfigurationAggregator",
-                "config:DeleteConfigurationRecorder",
-                "config:DeleteDeliveryChannel",
-                "config:DeleteEvaluationResults",
-                "config:DeletePendingAggregationRequest"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
             "Sid": "cloudtTrailStatement",
             "Effect": "Deny",
             "Action": [
